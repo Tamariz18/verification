@@ -37,4 +37,20 @@ Use it to verify your credit card number. You may also check the correctness of 
 
 
 def check_card(number):
-    pass
+   
+   
+   numero = str(number)[::-1]
+   print(numero)
+   contadorpares=0
+   sumador=0
+   aux=0
+   for i in range (0,len(numero),1):
+      contadorpares=contadorpares+1
+      aux=int(numero[i])
+      if contadorpares%2==0: 
+         aux=int(numero[i])*2
+      if aux>=10: 
+         aux=aux-9
+      sumador=sumador+aux
+   if sumador%10==0: return True
+   else: return False
